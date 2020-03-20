@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" 
+  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <title>首页</title>
+    </head>
+    <body>
+        <div class="button-view">
+            <!-- js调用oc: 拦截方式 -->
+            <button class="btn btn-success" onClick="schemeJSToOC()">JS调用OC方法：拦截方式</button>
+            <!-- js调用oc: 拦截方式 -->
+            <button class="btn btn-info" onClick="JavaScriptCoreJSToOC('success')">JS调用OC方法：JavaScriptCore方式</button>
+            <!-- js调用oc：WKScriptMessageHandle方式 -->
+            <button class="btn btn-warning" onClick="wkscriptmessagehandle()">JS调用OC方法：WKScriptMessageHandle方式</button>
+        </div>
+    </body>
+</html>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+
+    // js调用oc
+    function wkscriptmessagehandle() {
+        window
+            .webkit
+            .messageHandlers
+            .jsCallOC_WKScriptMessageHandle
+            .postMessage({'name':'yilan','id':'1'});
+    }
+
+    function schemeJSToOC() {
+        window.location.href = "js_native://jsToOC";
+    }
+
+    // oc调用js
+    function OCToJS(param) {
+        let res = 'JS接受到了:'+param
+        alert(res)
+        return res
+    }
+</script>
+
+<style>
+.button-view {
+    margin-top: 20px;
+}
+.button-view button {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+</style>

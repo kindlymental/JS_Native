@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  JS_Native
+//
+//  Created by 刘怡兰 on 2020/3/20.
+//  Copyright © 2020 lyl. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// 需要编辑：可配置到本地nginx目录下或者修改webView加载资源为pathForResource方式；
+//#define WebViewURL @"http://el.liugezhou.online:8080/gitlab%E9%A1%B9%E7%9B%AE/FE_02/pages/js_native.html"
+
+#define WebViewURL @""
+
+#endif /* PrefixHeader_pch */
